@@ -22,6 +22,9 @@ jobs:
       - name: Generate Prisma client
         run: npx prisma generate
 
+      - name: Check for merge conflict markers
+        run: node scripts/check-conflict-markers.js
+
       - name: Typecheck
         run: npx tsc --noEmit
 
